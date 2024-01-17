@@ -3,13 +3,29 @@ import classes from './homePage.module.css';
 import Calendar from '@/components/calendar';
 import Header from '@/components/header';
 import { getEvents } from '@/utils/getEvents';
+// import { sentEventsToDatabase } from '@/utils/sentEvents';
 import { eventType } from '@/types';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { addEvent, setEvents } from '@/eventsSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 
 interface HomeProps {
-  events: eventType[];
+  fetchedEvents: eventType[];
 }
 
-const Home:React.FC<HomeProps> = ({ events }) => {
+const Home: React.FC<HomeProps> = ({ fetchedEvents }) => {
+  // const events = useSelector((state: RootState) => state.events.events);
+  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   sentEventsToDatabase(events);
+  // }, [events]);
+
+  useEffect(() => {
+    dispatch(setEvents(fetchedEvents));
+  }, [fetchedEvents]);
+
   return (
     <>
       <Head>
@@ -19,7 +35,7 @@ const Home:React.FC<HomeProps> = ({ events }) => {
       </Head>
       <main className={classes.main}>
         <Header />
-        <Calendar events={events} />
+        <Calendar />
       </main>
     </>
   );
@@ -29,7 +45,7 @@ export const getStaticProps = async () => {
   const events = await getEvents();
   return {
     props: {
-      events,
+      fetchedEvents: events,
     },
   };
 };

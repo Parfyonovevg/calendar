@@ -11,4 +11,5 @@
   list-style: none;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 }

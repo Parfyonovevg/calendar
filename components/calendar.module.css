@@ -3,6 +3,7 @@
   height: 950px;
   width: 250px;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .hours {

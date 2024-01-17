@@ -1,24 +1,36 @@
 import { eventType } from '../types';
 
 export const setSizeAndPosition = (arr: eventType[]) => {
-  return arr.map((event) => {
-    const { start, end } = event;
+  // Sort events by start time
+  const sortedEvents = [...arr].sort((a, b) => a.start - b.start);
 
-    const overlappingEvents = arr.filter((el) => {
-      return (
-        (start >= el.start && start < el.end) ||
-        (end > el.start && end <= el.end)
-      );
-    });
+  // Group overlapping events
+  const overlappingGroups = [];
+  for (const event of sortedEvents) {
+    let placed = false;
+    for (const group of overlappingGroups) {
+      if (group.some((el) => 
+        (event.start < el.end && event.end > el.start))) {
+        group.push(event);
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      overlappingGroups.push([event]);
+    }
+  }
 
-    const numOverlappingEvents = overlappingEvents.length;
-    const eventWidth = 200 / numOverlappingEvents;
+  // Calculate width and left position for each event
+  return sortedEvents.map((event) => {
+    const group = overlappingGroups.find((group) => group.includes(event));
+    const eventWidth = 200 / group.length;
+    const index = group.indexOf(event);
 
-    overlappingEvents.forEach((el, index) => {
-      el.width = eventWidth;
-      el.left = 50 + index * eventWidth;
-    });
-
-    return event;
+    return {
+      ...event,
+      width: eventWidth,
+      left: 50 + index * eventWidth,
+    };
   });
 };

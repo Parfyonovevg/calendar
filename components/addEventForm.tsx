@@ -15,16 +15,15 @@ const AddEventForm: React.FC<AddEventFormProps> = ({ addEventHandler }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // convert time to minutes
     const [hours, minutes] = start.split(':');
     const totalMinutes = (parseInt(hours) - 8) * 60 + parseInt(minutes);
 
     const addedEvent = {
       id: uuidv4(),
       title,
-      start: totalMinutes,
-      duration: +duration,
-      end: totalMinutes + +duration,
+      start: totalMinutes + '',
+      duration: duration,
+      end: totalMinutes + +duration + '',
     };
 
     addEventHandler(addedEvent);
@@ -34,6 +33,7 @@ const AddEventForm: React.FC<AddEventFormProps> = ({ addEventHandler }) => {
     <form className={classes.form} onSubmit={handleSubmit}>
       <label className={classes.title}>Title</label>
       <input
+        required
         className={classes.input}
         type='text'
         value={title}
@@ -44,22 +44,22 @@ const AddEventForm: React.FC<AddEventFormProps> = ({ addEventHandler }) => {
         Start (from 08:00 to 16:45. step - 15min))
       </label>
       <input
+        required
         className={classes.input}
         type='time'
         value={start}
         onChange={(event) => setStart(event.target.value)}
         min='08:00'
         max='16:45'
-        step='900'
       />
 
       <label className={classes.duration}>Duration in minutes</label>
       <input
+        required
         className={classes.input}
         type='number'
         min='0'
         max='570'
-        step='15'
         value={duration}
         onChange={(event) => setDuration(event.target.value)}
       />

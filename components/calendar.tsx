@@ -1,15 +1,15 @@
 import EventTab from './eventTab';
 import classes from './calendar.module.css';
 import { setSizeAndPosition } from '@/utils/setSizeAndPosition';
-import { getEvents } from '@/utils/getEvents';
 import { eventType } from '@/types';
 const hours = ['08', '09', '10', '11', '12', '01', '02', '03', '04', '05'];
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 
-interface CalendarProps {
-  events: eventType[];
-}
-const Calendar: React.FC<CalendarProps> = ({ events }) => {
+const Calendar: React.FC = () => {
+  const events = useSelector((state: RootState) => state.events.events);
   const updatedEvents = setSizeAndPosition(events);
+
   return (
     <main className={classes.calendar}>
       <ul className={classes.hours}>

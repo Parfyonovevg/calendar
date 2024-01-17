@@ -1,12 +1,19 @@
 import Link from 'next/link';
+import classes from './header.module.css';
 
 const Header = () => {
   return (
     <header>
-      <div>
-        <Link href='/add-event'>Add event</Link>
-        <Link href='/'>Logout</Link>
-        <Link href='/'>Download</Link>
+      <div className={classes.container}>
+        <Link className={classes.link} href='/add-event'>
+          Add event
+        </Link>
+        <Link className={classes.link} href='/'>
+          Logout
+        </Link>
+        <Link className={classes.link} href='/get-data'>
+          Download
+        </Link>
       </div>
     </header>
   );
