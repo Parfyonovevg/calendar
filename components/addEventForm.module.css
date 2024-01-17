@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Effectively makes form take up whole vertical height of viewport */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling for form elements */
+.title,
+.start,
+.duration {
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 120px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50; /* Green */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}

@@ -9,14 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^6.3.0",
+    "next": "14.0.4",
+    "next-redux-wrapper": "^8.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-redux": "^9.1.0",
+    "redux": "^5.0.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.7",
+    "typescript": "^5"
   }
 }
