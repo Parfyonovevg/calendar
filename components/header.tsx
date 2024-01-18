@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import classes from './header.module.css';
 import { removeUser } from '@/store/userSlice';
 
-
 const Header = () => {
   const dispatch = useDispatch();
   const logoutHandler = () => {
@@ -23,6 +22,7 @@ const Header = () => {
           Download
         </Link>
       </div>
+      <h2>Click on event to delete</h2>
     </header>
   );
 };

@@ -8,9 +8,9 @@ interface GetDataProps {
 const GetData: React.FC<GetDataProps> = ({ fetchedEvents }) => {
   const data = JSON.stringify(
     fetchedEvents.map((event) => ({
-      title: event.title,
       start: event.start,
       duration: event.duration,
+      title: event.title,
     })),
     null,
     2

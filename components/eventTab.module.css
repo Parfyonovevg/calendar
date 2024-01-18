@@ -7,6 +7,7 @@
   border-left: 4px solid #6e9ecf;
   overflow: hidden;
   font-size: 14px;
+  text-wrap: nowrap;
   text-overflow: ellipsis;
   list-style: none;
   color: #000;
