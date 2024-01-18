@@ -1,15 +1,15 @@
 .event {
-  font-size: 14px;
   position: absolute;
+  left: 50px;
   width: 100%;
   max-width: 200px;
-  left: 50px;
   padding: 1px;
-  background-color: #e2ecf5;
   border-left: 4px solid #6e9ecf;
-  color: #000;
-  list-style: none;
   overflow: hidden;
+  font-size: 14px;
   text-overflow: ellipsis;
+  list-style: none;
+  color: #000;
+  background-color: #e2ecf5;
   cursor: pointer;
 }

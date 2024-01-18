@@ -1,11 +1,10 @@
 import { useRouter } from 'next/router';
-import AddEventForm from '@/components/addEventForm';
 const axios = require('axios').default;
+import AddEventForm from '@/components/addEventForm';
 
 import { eventType } from '@/types';
 
 const AddEventPage = () => {
-  // const dispatch = useDispatch();
   const router = useRouter();
   const addEventHandler = async (enteredData: eventType) => {
     try {

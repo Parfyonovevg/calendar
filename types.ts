@@ -7,3 +7,8 @@ export type eventType = {
   left?: number;
   width?: number;
 };
+
+export type userType = {
+  email: string;
+  name: string;
+};

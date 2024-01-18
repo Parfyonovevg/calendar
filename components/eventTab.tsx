@@ -1,7 +1,7 @@
-import { eventType } from '@/types';
+import { useRouter } from 'next/router';
 import classes from './eventTab.module.css';
 const axios = require('axios').default;
-import { useRouter } from 'next/router';
+import { eventType } from '@/types';
 
 type eventTabProps = {
   event: eventType;

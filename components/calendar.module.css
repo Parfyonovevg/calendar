@@ -2,8 +2,8 @@
   position: relative;
   height: 950px;
   width: 250px;
-  background-color: #fff;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .hours {

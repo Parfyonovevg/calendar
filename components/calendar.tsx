@@ -1,10 +1,10 @@
-import EventTab from './eventTab';
 import classes from './calendar.module.css';
+import EventTab from './eventTab';
 import { setSizeAndPosition } from '@/utils/setSizeAndPosition';
-import { eventType } from '@/types';
+
 const hours = ['08', '09', '10', '11', '12', '01', '02', '03', '04', '05'];
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store';
+import { RootState } from '@/store/store';
 
 const Calendar: React.FC = () => {
   const events = useSelector((state: RootState) => state.events.events);

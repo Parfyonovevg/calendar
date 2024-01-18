@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { eventType } from './types';
+import { eventType } from '../types';
 
-export interface CounterState {
+export interface EventsState {
   events: eventType[];
 }
 
-const initialState: CounterState = {
+const initialState: EventsState = {
   events: [],
 };
 
-export const counterSlice = createSlice({
+export const eventSlice = createSlice({
   name: 'events',
   initialState,
   reducers: {
@@ -28,6 +28,6 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { setEvents, addEvent, deleteEvent } = counterSlice.actions;
+export const { setEvents, addEvent, deleteEvent } = eventSlice.actions;
 
-export default counterSlice.reducer;
+export default eventSlice.reducer;

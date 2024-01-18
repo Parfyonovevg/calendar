@@ -1,14 +1,13 @@
 .form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh; /* Effectively makes form take up whole vertical height of viewport */
   padding: 20px;
   box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Styling for form elements */
 .title,
 .start,
 .duration {
@@ -24,9 +23,9 @@
 .button {
   margin-top: 20px;
   padding: 10px 20px;
+  border: none;
   background-color: #4caf50; /* Green */
   color: white;
-  border: none;
   cursor: pointer;
 }
 

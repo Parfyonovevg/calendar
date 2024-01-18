@@ -1,13 +1,13 @@
 .container {
   display: flex;
+  height: 50px;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 50px;
 }
 
 .link:hover {
-  color: #96aac2;
   text-decoration: underline;
+  color: #96aac2;
   scale: 1.1;
 }
