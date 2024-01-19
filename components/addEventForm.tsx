@@ -21,9 +21,9 @@ const AddEventForm: React.FC<AddEventFormProps> = ({ addEventHandler }) => {
     const addedEvent = {
       id: uuidv4(),
       title,
-      start: totalMinutes + '',
-      duration: duration,
-      end: totalMinutes + +duration + '',
+      start: totalMinutes,
+      duration: +duration,
+      end: totalMinutes + +duration,
     };
 
     addEventHandler(addedEvent);

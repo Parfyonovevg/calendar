@@ -24,11 +24,10 @@ const EventTab: React.FC<eventTabProps> = ({ event }) => {
       className={classes.event}
       onClick={deleteHandler}
       style={{
-        top: +event.start * (100 / 60),
-        height: +event.duration * (100 / 60),
+        top: event.start * (100 / 60),
+        height: event.duration * (100 / 60),
         width: event.width,
         left: event.left,
-        maxHeight: '100%',
       }}>
       {event.title}
     </li>

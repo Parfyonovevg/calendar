@@ -1,9 +1,9 @@
 export type eventType = {
   id: string;
   title: string;
-  start: string;
-  duration: string;
-  end: string;
+  start: number;
+  duration: number;
+  end: number;
   left?: number;
   width?: number;
 };
